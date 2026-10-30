@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.tom.createores.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "createoreexcavation.refmap.json",
+  "mixins": [
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
