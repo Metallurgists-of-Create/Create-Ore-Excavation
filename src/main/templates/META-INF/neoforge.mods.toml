@@ -1,0 +1,52 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+issueTrackerURL="https://github.com/Metallurgists-of-Create/Create-Ore-Excavation/issues"
+
+[[mods]]
+modId="createoreexcavation"
+version="${neo_version}"
+displayName="Create Ore Excavation"
+updateJSONURL="https://raw.githubusercontent.com/Metallurgists-of-Create/Create-Ore-Excavation/main/version-check.json"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/create-ore-excavation"
+logoFile="createoreexcavation.png"
+credits="tom5454"
+authors="tom5454"
+description='''
+Extract resources using machines powered by Rotational Force
+'''
+
+[[dependencies.createoreexcavation]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.createoreexcavation]]
+    modId="create"
+    type="required"
+    versionRange="[6.0.10,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.createoreexcavation]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21,1.21.1]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.createoreexcavation]]
+    modId="kubejs"
+    type="optional"
+    versionRange="[2101.7.2-build.295,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.createoreexcavation]]
+    modId="kubejs_create"
+    type="optional"
+    versionRange="[2101.3.1-build.14,)"
+    ordering="NONE"
+    side="BOTH"
