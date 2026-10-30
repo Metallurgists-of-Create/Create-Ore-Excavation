@@ -133,10 +133,13 @@ dependencies {
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${property("minecraft_version")}:${property("flywheel_version")}")
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${property("minecraft_version")}:${property("flywheel_version")}")
 
-    implementation("mezz.jei:jei-${property("minecraft_version")}-neoforge:${property("jei_version")}")
     implementation("com.tterrag.registrate:Registrate:${property("registrate_version")}")
 
-    implementation("dev.latvian.mods:kubejs-neoforge:${property("kubejs_version")}")
+    compileOnly("mezz.jei:jei-${property("minecraft_version")}-neoforge:${property("jei_version")}")
+    localRuntime("mezz.jei:jei-${property("minecraft_version")}-neoforge:${property("jei_version")}")
+
+    compileOnly("dev.latvian.mods:kubejs-neoforge:${property("kubejs_version")}")
+    localRuntime("dev.latvian.mods:kubejs-neoforge:${property("kubejs_version")}")
     interfaceInjectionData("dev.latvian.mods:kubejs-neoforge:${property("kubejs_version")}")
 
     localRuntime("me.djtheredstoner:DevAuth-neoforge:1.2.1")
