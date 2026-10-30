@@ -1,4 +1,4 @@
-package com.tom.createores;
+package dev.metallurgists.createores;
 
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
