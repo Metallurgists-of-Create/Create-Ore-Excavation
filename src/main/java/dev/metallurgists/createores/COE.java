@@ -5,6 +5,8 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
+import dev.metallurgists.createores.registry.COECreativeTabs;
+import dev.metallurgists.createores.registry.COEItems;
 import net.createmod.catnip.lang.FontHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
@@ -31,8 +33,12 @@ public class COE {
         ModLoadingContext modLoadingContext = ModLoadingContext.get();
         REGISTRATE.registerEventListeners(modEventBus);
 
+        COECreativeTabs.register(modEventBus);
+        COEItems.init();
+
         modEventBus.addListener(COE::commonSetup);
         modEventBus.addListener(this::clientSetup);
+        modEventBus.addListener(COECreativeTabs::addCreative);
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
@@ -48,6 +54,14 @@ public class COE {
         return path.contains(":")
                 ? ResourceLocation.tryParse(path)
                 : ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+    }
+
+    // Used for tags and allows an override of the common namespace
+    @Contract("_ -> new")
+    public static ResourceLocation asCommon(String path) {
+        return path.contains(":")
+                ? ResourceLocation.tryParse(path)
+                : ResourceLocation.fromNamespaceAndPath("c", path);
     }
 
     public static CreateRegistrate registrate() {
